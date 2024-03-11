@@ -33544,3 +33544,24 @@ manage.access_nutrition_usuario,access_nutrition_usuario,manage.model_nutrition_
 2024-03-10 23:23:43,338 1 INFO db werkzeug: 172.23.0.1 - - [10/Mar/2024 23:23:43] "POST /web/dataset/call_kw/res.partner/create HTTP/1.1" 200 - 18 0.022 0.043
 2024-03-10 23:23:43,382 1 INFO db werkzeug: 172.23.0.1 - - [10/Mar/2024 23:23:43] "POST /web/dataset/call_kw/res.partner/read HTTP/1.1" 200 - 13 0.012 0.018
 2024-03-10 23:23:45,189 1 INFO db werkzeug: 172.23.0.1 - - [10/Mar/2024 23:23:45] "POST /web/dataset/call_kw/res.partner/web_search_read HTTP/1.1" 200 - 5 0.005 0.008
+2024-03-10 23:43:16,853 1 INFO ? odoo.service.server: Initiating shutdown 
+2024-03-10 23:43:16,922 1 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2024-03-10 23:43:17,079 1 INFO db odoo.sql_db: Connection to the database failed 
+2024-03-10 23:43:17,085 1 WARNING db odoo.addons.base.models.ir_cron: Exception in cron: 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_cron.py", line 102, in _process_jobs
+    with db.cursor() as cron_cr:
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 740, in cursor
+    return Cursor(self.__pool, self.__dbname, self.__dsn)
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 267, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "<decorator-gen-2>", line 2, in borrow
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 668, in borrow
+    result = psycopg2.connect(
+  File "/usr/lib/python3/dist-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "db" (172.23.0.3), port 5432 failed: FATAL:  the database system is shutting down
+
+2024-03-10 23:43:17,113 1 INFO db odoo.sql_db: Connection to the database failed 
